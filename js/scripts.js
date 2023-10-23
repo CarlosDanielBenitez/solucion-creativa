@@ -1,11 +1,4 @@
-/*!
-* Start Bootstrap - Agency v7.0.12 (https://startbootstrap.com/theme/agency)
-* Copyright 2013-2023 Start Bootstrap
-* Licensed under MIT (https://github.com/StartBootstrap/startbootstrap-agency/blob/master/LICENSE)
-*/
-//
-// Scripts
-// 
+
 
 window.addEventListener('DOMContentLoaded', event => {
 
@@ -51,4 +44,31 @@ window.addEventListener('DOMContentLoaded', event => {
         });
     });
 
+});
+
+
+//!FORM
+
+document.addEventListener("DOMContentLoaded", function () {
+    const form = document.getElementById("contactoForm");
+    form.addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        const nombre = document.getElementById("nombre").value;
+        const apellido = document.getElementById("apellido").value;
+        const telefono = document.getElementById("telefono").value;
+        const email = document.getElementById("email").value;
+        if (nombre === "" || apellido === "" || telefono === "" || email === "") {
+            alert("Please complete all fields.");
+        } else {
+            alert("Formulario enviado:\nName: " + nombre + "\nSurname: " + apellido + "\nPhone Number: " + telefono + "\nEmail: " + email);
+            
+
+            //clear
+            document.getElementById("nombre").value = "";
+            document.getElementById("apellido").value = "";
+            document.getElementById("telefono").value = "";
+            document.getElementById("email").value = "";
+        }
+    });
 });
