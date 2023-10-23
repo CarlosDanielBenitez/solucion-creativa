@@ -63,7 +63,7 @@ document.addEventListener("DOMContentLoaded", function () {
             Swal.fire({
                 icon: "error",
                 title: "Error",
-                text: "Por favor, complete todos los campos requeridos.",
+                text: "Please complete all required fields.",
             });
         } else {
 
