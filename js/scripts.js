@@ -59,18 +59,18 @@ document.addEventListener("DOMContentLoaded", function () {
         const email = document.getElementById("email").value;
 
         if (nombre === "" || apellido === "" || telefono === "" || email === "") {
-           
+
             Swal.fire({
                 icon: "error",
                 title: "Error",
                 text: "Por favor, complete todos los campos requeridos.",
             });
         } else {
-           
+
             Swal.fire({
                 icon: "success",
-                title: "Formulario enviado",
-                text: `Nombre: ${nombre}\nApellido: ${apellido}\nNúmero de teléfono: ${telefono}\nEmail: ${email}`,
+                title: "Submitted form",
+                text: `Thank you for sending us your information ${nombre} ${apellido}. We will contact you soon to send you more information.`
             });
 
             // clear form
