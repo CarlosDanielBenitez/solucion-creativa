@@ -48,7 +48,6 @@ window.addEventListener('DOMContentLoaded', event => {
 
 
 //!FORM
-
 document.addEventListener("DOMContentLoaded", function () {
     const form = document.getElementById("contactoForm");
     form.addEventListener("submit", function (e) {
@@ -58,13 +57,23 @@ document.addEventListener("DOMContentLoaded", function () {
         const apellido = document.getElementById("apellido").value;
         const telefono = document.getElementById("telefono").value;
         const email = document.getElementById("email").value;
-        if (nombre === "" || apellido === "" || telefono === "" || email === "") {
-            alert("Please complete all fields.");
-        } else {
-            alert("Formulario enviado:\nName: " + nombre + "\nSurname: " + apellido + "\nPhone Number: " + telefono + "\nEmail: " + email);
-            
 
-            //clear
+        if (nombre === "" || apellido === "" || telefono === "" || email === "") {
+           
+            Swal.fire({
+                icon: "error",
+                title: "Error",
+                text: "Por favor, complete todos los campos requeridos.",
+            });
+        } else {
+           
+            Swal.fire({
+                icon: "success",
+                title: "Formulario enviado",
+                text: `Nombre: ${nombre}\nApellido: ${apellido}\nNúmero de teléfono: ${telefono}\nEmail: ${email}`,
+            });
+
+            // clear form
             document.getElementById("nombre").value = "";
             document.getElementById("apellido").value = "";
             document.getElementById("telefono").value = "";
